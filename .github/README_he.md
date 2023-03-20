@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gofiber.io">
-    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/fiber_v2_logo.svg">
+    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/logo.svg">
   </a>
   <br>
   <!-- base64 flags are available at https://www.phoca.cz/cssflags/ -->
@@ -69,10 +69,10 @@
     <img src="https://img.shields.io/badge/%F0%9F%94%8E%20gocover-97.8%25-75C46B.svg?style=flat-square">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ASecurity">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Security?label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/security.yml?branch=master&label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ATest">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Test?label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/test.yml?branch=master&label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
   </a>
     <a href="https://docs.gofiber.io">
     <img src="https://img.shields.io/badge/%F0%9F%92%A1%20fiber-docs-00ACD7.svg?style=flat-square">
@@ -125,15 +125,15 @@ func main() {
 </div>
 
 <p float="left" align="middle">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark-pipeline.png" width="49%">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark_alloc.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark-pipeline.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark_alloc.png" width="49%">
 </p>
 
 <div dir="rtl">
 
 ## ⚙️ התקנה
 
-Make sure you have Go installed ([download](https://go.dev/dl/)). Version `1.16` or higher is required.
+Make sure you have Go installed ([download](https://go.dev/dl/)). Version `1.17` or higher is required.
 
 Initialize your project by creating a folder and then running `go mod init github.com/your/repo` ([learn more](https://go.dev/blog/using-go-modules)) inside the folder. Then install Fiber with the [`go get`](https://pkg.go.dev/cmd/go/#hdr-Add_dependencies_to_current_module_and_install_them) command:
 
@@ -147,14 +147,14 @@ go get -u github.com/gofiber/fiber/v2
 
 <div dir="rtl">
 
--   [ניתוב](https://docs.gofiber.io/routing) רובסטי
+-   [ניתוב](https://docs.gofiber.io/guide/routing) רובסטי
 -   הנגשת [קבצים סטטיים](https://docs.gofiber.io/api/app#static)
 -   [ביצועים](https://docs.gofiber.io/extra/benchmarks) גבוהים במיוחד
 -   צורך כמות [זכרון קטנה](https://docs.gofiber.io/extra/benchmarks)
 -   [נקודות קצה עבור API](https://docs.gofiber.io/api/ctx)
--   תמיכה ב-[Middleware](https://docs.gofiber.io/middleware) & [Next](https://docs.gofiber.io/api/ctx#next)
+-   תמיכה ב-[Middleware](https://docs.gofiber.io/category/-middleware) & [Next](https://docs.gofiber.io/api/ctx#next)
 -   תכנות [מהיר](https://dev.to/koddr/welcome-to-fiber-an-express-js-styled-fastest-web-framework-written-with-on-golang-497) של צד שרת
--   [מנועי תבניות](https://docs.gofiber.io/middleware#template)
+-   [מנועי תבניות](https://docs.gofiber.io/category/-middleware#template)
 -   [תמיכה ב-WebSocket](https://github.com/gofiber/websocket)
 -   [Server-Sent events](https://github.com/gofiber/recipes/tree/master/sse)
 -   [הגבלת קצבים ובקשות](https://docs.gofiber.io/api/middleware/limiter)
@@ -190,7 +190,7 @@ Fiber נוצרה **בהשראת** Express, ה-web framework הפופולרית �
 <div dir="rtl">
 
 ## ⚠️ Limitations
-* Due to Fiber's usage of unsafe, the library may not always be compatible with the latest Go version. Fiber 2.40.0 has been tested with Go versions 1.16 to 1.19.
+* Due to Fiber's usage of unsafe, the library may not always be compatible with the latest Go version. Fiber 2.40.0 has been tested with Go versions 1.17 to 1.20.
 * Fiber is not compatible with net/http interfaces. This means you will not be able to use projects like gqlgen, go-swagger, or any others which are part of the net/http ecosystem.
 
 ## 👀 דוגמאות
@@ -526,7 +526,7 @@ func main() {
 
 ### תגובת JSON
 
-📖 [JSON](https://docs.gofiber.io/ctx#json)
+📖 [JSON](https://docs.gofiber.io/api/ctx#json)
 
 <div dir="ltr">
 
@@ -620,7 +620,7 @@ func main() {
     c.Context().SetBodyStreamWriter(fasthttp.StreamWriter(func(w *bufio.Writer) {
       fmt.Println("WRITER")
       var i int
-      
+
       for {
         i++
         msg := fmt.Sprintf("%d - the time is %v", i, time.Now())

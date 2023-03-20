@@ -14,6 +14,7 @@ import (
 
 // go test -race -run Test_Path_parseRoute
 func Test_Path_parseRoute(t *testing.T) {
+	t.Parallel()
 	var rp routeParser
 
 	rp = parseRoute("/shop/product/::filter/color::color/size::size")
@@ -1118,7 +1119,6 @@ func Benchmark_Path_matchParams(t *testing.B) {
 					utils.AssertEqual(t, c.params[0:len(c.params)-1], ctxParams[0:len(c.params)-1], fmt.Sprintf("route: '%s', url: '%s'", r, c.url))
 				}
 			})
-
 		}
 	}
 	benchCase("/api/:param/fixedEnd", []testparams{
@@ -1347,7 +1347,6 @@ func Benchmark_RoutePatternMatch(t *testing.B) {
 				}
 				utils.AssertEqual(t, c.match, matchRes, fmt.Sprintf("route: '%s', url: '%s'", pattern, c.url))
 			})
-
 		}
 	}
 	benchCase("/api/:param/fixedEnd", []testparams{

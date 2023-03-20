@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gofiber.io">
-    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/fiber_v2_logo.svg">
+    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/logo.svg">
   </a>
   <br>
   <!-- base64 flags are available at https://www.phoca.cz/cssflags/ -->
@@ -69,10 +69,10 @@
     <img src="https://img.shields.io/badge/%F0%9F%94%8E%20gocover-97.8%25-75C46B.svg?style=flat-square">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ASecurity">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Security?label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/security.yml?branch=master&label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ATest">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Test?label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/test.yml?branch=master&label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
   </a>
     <a href="https://docs.gofiber.io">
     <img src="https://img.shields.io/badge/%F0%9F%92%A1%20fiber-docs-00ACD7.svg?style=flat-square">
@@ -108,13 +108,13 @@ func main() {
 이 테스트들은 [TechEmpower](https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=plaintext)와 [Go Web](https://github.com/smallnest/go-web-framework-benchmark)을 통해 측정되었습니다. 만약 모든 결과를 보고 싶다면, [Wiki](https://docs.gofiber.io/extra/benchmarks)를 확인해 주세요.
 
 <p float="left" align="middle">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark-pipeline.png" width="49%">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark_alloc.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark-pipeline.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark_alloc.png" width="49%">
 </p>
 
 ## ⚙️ 설치
 
-Go가 설치되어 있는 것을 확인해 주세요 ([download](https://go.dev/dl/)). 버전 1.16 또는 그 이상이어야 합니다.
+Go가 설치되어 있는 것을 확인해 주세요 ([download](https://go.dev/dl/)). 버전 1.17 또는 그 이상이어야 합니다.
 
 폴더를 생성하여 당신의 프로젝트를 초기화하고, 폴더 안에서 `go mod init github.com/your/repo` ([learn more](https://go.dev/blog/using-go-modules)) 를 실행하세요. 그리고 [`go get`](https://pkg.go.dev/cmd/go/#hdr-Add_dependencies_to_current_module_and_install_them) 명령어로 Fiber를 설치하세요:
 
@@ -124,7 +124,7 @@ go get -u github.com/gofiber/fiber/v2
 
 ## 🎯 특징
 
--   견고한 [라우팅](https://docs.gofiber.io/routing)
+-   견고한 [라우팅](https://docs.gofiber.io/guide/routing)
 -   [정적 파일](https://docs.gofiber.io/api/app#static) 제공
 -   뛰어난 [성능](https://docs.gofiber.io/extra/benchmarks)
 -   [적은 메모리](https://docs.gofiber.io/extra/benchmarks) 공간
@@ -147,7 +147,7 @@ Fiber는 인터넷에서 가장 인기있는 웹 프레임워크인 Express에�
 우리는 **어떤한** 작업, **마감일정**, 개발자의 **기술**이던간에 **빠르고**, **유연하고**, **익숙한** Go 웹 프레임워크를 만들기 위해 사용자들의 [이슈들](https://github.com/gofiber/fiber/issues)을(그리고 모든 인터넷을 통해) **듣고 있습니다**! Express가 자바스크립트 세계에서 하는 것 처럼요.
 
 ## ⚠️ 한계점
-* Fiber는 unsafe 패키지를 사용하기 때문에 최신 Go버전과 호환되지 않을 수 있습니다.Fiber 2.40.0은 Go 버전 1.16에서 1.19로 테스트되고 있습니다.
+* Fiber는 unsafe 패키지를 사용하기 때문에 최신 Go버전과 호환되지 않을 수 있습니다.Fiber 2.40.0은 Go 버전 1.17에서 1.20로 테스트되고 있습니다.
 * Fiber는 net/http 인터페이스와 호환되지 않습니다.즉, gqlgen이나 go-swagger 등 net/http 생태계의 일부인 프로젝트를 사용할 수 없습니다.
 
 ## 👀 예제
@@ -440,7 +440,7 @@ func main() {
 
 ### JSON Response
 
-📖 [JSON](https://docs.gofiber.io/ctx#json)
+📖 [JSON](https://docs.gofiber.io/api/ctx#json)
 
 ```go
 type User struct {
@@ -524,7 +524,7 @@ func main() {
     c.Context().SetBodyStreamWriter(fasthttp.StreamWriter(func(w *bufio.Writer) {
       fmt.Println("WRITER")
       var i int
-      
+
       for {
         i++
         msg := fmt.Sprintf("%d - the time is %v", i, time.Now())

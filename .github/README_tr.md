@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gofiber.io">
-    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/fiber_v2_logo.svg">
+    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/logo.svg">
   </a>
   <br>
   <!-- base64 flags are available at https://www.phoca.cz/cssflags/ -->
@@ -66,10 +66,10 @@
     <img src="https://img.shields.io/badge/%F0%9F%94%8E%20gocover-97.8%25-75C46B.svg?style=flat-square">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ASecurity">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Security?label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/security.yml?branch=master&label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ATest">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Test?label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/test.yml?branch=master&label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
   </a>
     <a href="https://docs.gofiber.io">
     <img src="https://img.shields.io/badge/%F0%9F%92%A1%20fiber-docs-00ACD7.svg?style=flat-square">
@@ -108,13 +108,13 @@ func main() {
 Bu testler [TechEmpower](https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=plaintext) ve [Go Web](https://github.com/smallnest/go-web-framework-benchmark) tarafından gerçekleştirildi. Bütün sonuçları görmek için lütfen [Wiki](https://docs.gofiber.io/extra/benchmarks) sayfasını ziyaret ediniz.
 
 <p float="left" align="middle">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark-pipeline.png" width="49%">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark_alloc.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark-pipeline.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark_alloc.png" width="49%">
 </p>
 
 ## ⚙️ Kurulum
 
-Go'nun `1.16` sürümü ([indir](https://go.dev/dl/)) veya daha yüksek bir sürüm gerekli.
+Go'nun `1.17` sürümü ([indir](https://go.dev/dl/)) veya daha yüksek bir sürüm gerekli.
 
 Bir dizin oluşturup dizinin içinde `go mod init github.com/your/repo` komutunu yazarak projenizi geliştirmeye başlayın ([daha fazla öğren](https://go.dev/blog/using-go-modules)). Ardından Fiber'ı kurmak için [`go get`](https://pkg.go.dev/cmd/go/#hdr-Add_dependencies_to_current_module_and_install_them) komutunu çalıştırın:
 
@@ -124,7 +124,7 @@ go get -u github.com/gofiber/fiber/v2
 
 ## 🎯 Özellikler
 
--   Güçlü [routing](https://docs.gofiber.io/routing)
+-   Güçlü [routing](https://docs.gofiber.io/guide/routing)
 -   [Statik dosya](https://docs.gofiber.io/api/app#static) sunumu
 -   Olağanüstü [performans](https://docs.gofiber.io/extra/benchmarks)
 -   [Düşük bellek](https://docs.gofiber.io/extra/benchmarks) kullanımı
@@ -146,7 +146,7 @@ Fiber, internet üzerinde en popüler web framework'ü olan Express'ten **esinle
 
 ## ⚠️ Sınırlamalar
 
--   Fiber unsafe kullanımı sebebiyle Go'nun son sürümüyle her zaman uyumlu olmayabilir. Fiber 2.40.0, Go 1.16 ile 1.19 sürümleriyle test edildi.
+-   Fiber unsafe kullanımı sebebiyle Go'nun son sürümüyle her zaman uyumlu olmayabilir. Fiber 2.40.0, Go 1.17 ile 1.20 sürümleriyle test edildi.
 -   Fiber net/http arabirimiyle uyumlu değildir. Yani gqlgen veya go-swagger gibi net/http ekosisteminin parçası olan projeleri kullanamazsınız.
 
 ## 👀 Örnekler
@@ -257,7 +257,7 @@ func main() {
 		fmt.Println("🥇 İlk handler")
 		return c.Next()
 	})
-	
+
 	// /api ile başlayan bütün routelara etki eder.
 	app.Use("/api", func(c *fiber.Ctx) error {
 		fmt.Println("🥈 İkinci handler")
@@ -434,7 +434,7 @@ func main() {
 
 ### JSON Yanıtları
 
-📖 [JSON](https://docs.gofiber.io/ctx#json)
+📖 [JSON](https://docs.gofiber.io/api/ctx#json)
 
 ```go
 type User struct {
@@ -518,7 +518,7 @@ func main() {
     c.Context().SetBodyStreamWriter(fasthttp.StreamWriter(func(w *bufio.Writer) {
       fmt.Println("WRITER")
       var i int
-      
+
       for {
         i++
         msg := fmt.Sprintf("%d - the time is %v", i, time.Now())
@@ -603,7 +603,7 @@ Harici olarak barındırılan middlewareların modüllerinin listesi. Bu middlew
 | [redirect](https://github.com/gofiber/redirect)   | Yönlendirme middleware  'ı.                                                                                                                                               |
 | [rewrite](https://github.com/gofiber/rewrite)     | Rewrite middleware, sağlanan kurallara göre URL yolunu yeniden yazar. Geriye dönük uyumluluk için veya yalnızca daha temiz ve daha açıklayıcı bağlantılar oluşturmak için yardımcı olabilir. |
 | [storage](https://github.com/gofiber/storage)     | Fiber'in Storage yapısını destekleyen birçok storage driver'ı verir. Bu sayede depolama gerektiren Fiber middlewarelarında kolaylıkla kullanılabilir.                                                   |
-| [template](https://github.com/gofiber/template)   | Bu paket, Fiber `v2.x.x`, Go sürüm 1.16 veya üzeri gerekli olduğunda kullanılabilecek 9 template motoru içerir.                                                                             |
+| [template](https://github.com/gofiber/template)   | Bu paket, Fiber `v2.x.x`, Go sürüm 1.17 veya üzeri gerekli olduğunda kullanılabilecek 9 template motoru içerir.                                                                             |
 | [websocket](https://github.com/gofiber/websocket) | Yereller desteğiyle Fiber için Fasthttp WebSocket'a dayalıdır!                                                                                                                               |
 
 ## 🕶️ Awesome Listesi

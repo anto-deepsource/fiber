@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gofiber.io">
-    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/fiber_v2_logo.svg">
+    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/logo.svg">
   </a>
   <br>
   <!-- base64 flags are available at https://www.phoca.cz/cssflags/ -->
@@ -72,10 +72,10 @@
     <img src="https://img.shields.io/badge/%F0%9F%94%8E%20gocover-97.8%25-75C46B.svg?style=flat-square">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ASecurity">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Security?label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/security.yml?branch=master&label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ATest">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Test?label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/test.yml?branch=master&label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
   </a>
     <a href="https://docs.gofiber.io">
     <img src="https://img.shields.io/badge/%F0%9F%92%A1%20fiber-docs-00ACD7.svg?style=flat-square">
@@ -83,7 +83,7 @@
   <a href="https://gofiber.io/discord">
     <img src="https://img.shields.io/discord/704680098577514527?style=flat-square&label=%F0%9F%92%AC%20discord&color=00ACD7">
   </a>
-  
+
 </p>
 
 <p align="center">
@@ -118,13 +118,13 @@ func main() {
 відвідайте наш [Wiki](https://docs.gofiber.io/extra/benchmarks).
 
 <p float="left" align="middle">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark-pipeline.png" width="49%">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark_alloc.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark-pipeline.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark_alloc.png" width="49%">
 </p>
 
 ## ⚙️ Встановлення
 
-Переконайтеся, що Go встановлено ([завантажити](https://go.dev/dl/)). Потрібна версія `1.16` або вища.
+Переконайтеся, що Go встановлено ([завантажити](https://go.dev/dl/)). Потрібна версія `1.17` або вища.
 
 Ініціалізуйте проект, створивши папку, а потім запустивши `go mod init github.com/your/repo`
 ([детальніше](https://go.dev/blog/using-go-modules)) всередині цієї папки. Далі встановіть Fiber за допомогою
@@ -160,7 +160,7 @@ Fiber **натхненний** Express, найпопулярнішим веб-ф
 
 ## ⚠️ Обмеження
 
-- Через те, що Fiber використовує unsafe, бібліотека не завжди може бути сумісною з останньою версією Go. Fiber 2.40.0 було протестовано з Go версій 1.16 до 1.19.
+- Через те, що Fiber використовує unsafe, бібліотека не завжди може бути сумісною з останньою версією Go. Fiber 2.40.0 було протестовано з Go версій 1.17 до 1.20.
 - Fiber не сумісний з інтерфейсами net/http. Це означає, що ви не зможете використовувати такі проекти, як gqlgen, go-swagger або будь-які інші, які є частиною екосистеми net/http.
 
 ## 👀 Приклади
@@ -528,7 +528,7 @@ func main() {
     c.Context().SetBodyStreamWriter(fasthttp.StreamWriter(func(w *bufio.Writer) {
       fmt.Println("WRITER")
       var i int
-      
+
       for {
         i++
         msg := fmt.Sprintf("%d - the time is %v", i, time.Now())

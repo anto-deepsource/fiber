@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gofiber.io">
-    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/fiber_v2_logo.svg">
+    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/logo.svg">
   </a>
   <br>
   <!-- base64 flags are available at https://www.phoca.cz/cssflags/ -->
@@ -69,10 +69,10 @@
     <img src="https://img.shields.io/badge/%F0%9F%94%8E%20gocover-97.8%25-75C46B.svg?style=flat-square">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ASecurity">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Security?label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/security.yml?branch=master&label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ATest">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Test?label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/test.yml?branch=master&label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
   </a>
     <a href="https://docs.gofiber.io">
     <img src="https://img.shields.io/badge/%F0%9F%92%A1%20fiber-docs-00ACD7.svg?style=flat-square">
@@ -108,13 +108,13 @@ func main() {
 ئەم تاقیکردنەوانە لەلایەن [TechEmpower](https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=plaintext) و [Go Web](https://github.com/smallnest/go-web-framework-benchmark) ئەنجام دراون. دەتوانیت هەموو ئەنجامەکان [لێرە](https://docs.gofiber.io/extra/benchmarks) ببینیت.
 
 <p float="left" align="middle">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark-pipeline.png" width="49%">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark_alloc.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark-pipeline.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark_alloc.png" width="49%">
 </p>
 
 ## ⚙️ دامەزراندن
 
-دڵنیا بە لەوەی کە لەناو ئامێرەکەت Go دامەزراوە ([دای بگرە](https://go.dev/dl/)). دەبێت وەشانەکەشی `1.16` یان سەرووتر بێت.
+دڵنیا بە لەوەی کە لەناو ئامێرەکەت Go دامەزراوە ([دای بگرە](https://go.dev/dl/)). دەبێت وەشانەکەشی `1.17` یان سەرووتر بێت.
 
 پڕۆژەکەت دەست پێ بکە بە دروستکردنی بوخچەیەک و کار پێ کردنی فەرمانی `go mod init github.com/your/repo` ([زیاتر](https://go.dev/blog/using-go-modules)) لەناو بوخچەکە. دواتریش بەم فەرمانەی خوارەوە فایبەر دامەزرێنە:
 
@@ -124,12 +124,12 @@ go get -u github.com/gofiber/fiber/v2
 
 ## 🎯 تایبەتمەندییەکان
 
--   [ناونیشانی ئاڵۆز](https://docs.gofiber.io/routing)
+-   [ناونیشانی ئاڵۆز](https://docs.gofiber.io/guide/routing)
 -   [فایلی جێگیر](https://docs.gofiber.io/api/app#static)
 -   [خێراییەکی](https://docs.gofiber.io/extra/benchmarks) بێوێنە
 -   بەکارهێنانی [میمۆریی کەم](https://docs.gofiber.io/extra/benchmarks)
 -   توانای هەبوونی لقی [API](https://docs.gofiber.io/api/ctx)
--   پشتگیریی [Middleware](https://docs.gofiber.io/middleware) و [Next](https://docs.gofiber.io/api/ctx#next) وەک Express
+-   پشتگیریی [Middleware](https://docs.gofiber.io/category/-middleware) و [Next](https://docs.gofiber.io/api/ctx#next) وەک Express
 -   پڕۆگرامکردنی [خێرا](https://dev.to/koddr/welcome-to-fiber-an-express-js-styled-fastest-web-framework-written-with-on-golang-497)ی ڕاژە
 -   [داڕێژە](https://github.com/gofiber/template)
 -   پشتگیریی [WebSocket](https://github.com/gofiber/websocket)
@@ -439,7 +439,7 @@ func main() {
 
 ### وەڵامی JSON
 
-📖 [JSON](https://docs.gofiber.io/ctx#json)
+📖 [JSON](https://docs.gofiber.io/api/ctx#json)
 
 ```go
 type User struct {
@@ -523,7 +523,7 @@ func main() {
     c.Context().SetBodyStreamWriter(fasthttp.StreamWriter(func(w *bufio.Writer) {
       fmt.Println("WRITER")
       var i int
-      
+
       for {
         i++
         msg := fmt.Sprintf("%d - the time is %v", i, time.Now())

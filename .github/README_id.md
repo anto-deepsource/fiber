@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gofiber.io">
-    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/fiber_v2_logo.svg">
+    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/logo.svg">
   </a>
   <br>
   <!-- base64 flags are available at https://www.phoca.cz/cssflags/ -->
@@ -69,10 +69,10 @@
     <img src="https://img.shields.io/badge/%F0%9F%94%8E%20gocover-97.8%25-75C46B.svg?style=flat-square">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ASecurity">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Security?label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/security.yml?branch=master&label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ATest">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Test?label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/test.yml?branch=master&label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
   </a>
     <a href="https://docs.gofiber.io">
     <img src="https://img.shields.io/badge/%F0%9F%92%A1%20fiber-docs-00ACD7.svg?style=flat-square">
@@ -108,13 +108,13 @@ func main() {
 Pengukuran ini dilakukan oleh [TechEmpower](https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=plaintext) dan [Go Web](https://github.com/smallnest/go-web-framework-benchmark). Apabila anda ingin melihat hasil lengkapnya, silahkan kunjungi halaman [Wiki](https://docs.gofiber.io/extra/benchmarks) kami.
 
 <p float="left" align="middle">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark-pipeline.png" width="49%">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark_alloc.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark-pipeline.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark_alloc.png" width="49%">
 </p>
 
 ## ⚙️ Instalasi
 
-Pastikan kamu sudah menginstalasi Golang ([unduh](https://go.dev/dl/)). Dengan versi `1.16` atau lebih tinggi [ Direkomendasikan ].
+Pastikan kamu sudah menginstalasi Golang ([unduh](https://go.dev/dl/)). Dengan versi `1.17` atau lebih tinggi [ Direkomendasikan ].
 
 Inisialisasi proyek kamu dengan membuat folder lalu jalankan `go mod init github.com/nama-kamu/repo` ([belajar lebih banyak](https://go.dev/blog/using-go-modules)) di dalam folder. Kemudian instal Fiber dengan perintah [`go get`](https://pkg.go.dev/cmd/go/#hdr-Add_dependencies_to_current_module_and_install_them):
 
@@ -124,7 +124,7 @@ go get -u github.com/gofiber/fiber/v2
 
 ## 🎯 Fitur
 
--   Sistem [Routing](https://docs.gofiber.io/routing) yang padu
+-   Sistem [Routing](https://docs.gofiber.io/guide/routing) yang padu
 -   Menyajikan [file statis](https://docs.gofiber.io/api/app#static)
 -   [Kinerja](https://docs.gofiber.io/extra/benchmarks) ekstrim
 -   [Penggunaan memori](https://docs.gofiber.io/extra/benchmarks) yang kecil
@@ -144,11 +144,11 @@ Bagi yang baru yang beralih dari [Node.js](https://nodejs.org/en/about/) ke [Go]
 
 Fiber terinspirasi dari Express, salah satu kerangka kerja web yang paling terkenal di Internet. Kami menggabungkan **kemudahan** dari Express dan **kinerja luar biasa** dari Go. Apabila anda pernah membuat aplikasi dengan Node.js (_dengan Express atau yang lainnya_), maka banyak metode dan prinsip yang akan terasa **sangat umum** bagi anda.
 
-Kami **mendengarkan** para pengguna di [GitHub Issues](https://github.com/gofiber/fiber/issues) (_dan berbagai platform lainnya_) untuk menciptakan kerangka kerja web yang **cepat**, **fleksibel** dan **bersahabat** untuk berbagai macam keperluan, **tenggat waktu** dan **keahlian** para pengguna! Sama halnya seperti yang dilakukan Express di dunia JavaScript.
+Kami **mendengarkan** para pengguna di [GitHub Issues](https://github.com/gofiber/fiber/issues), Discord [channel](https://gofiber.io/discord), _dan berbagai platform lainnya_ untuk menciptakan kerangka kerja web yang **cepat**, **fleksibel** dan **bersahabat** untuk berbagai macam keperluan, **tenggat waktu** dan **keahlian** para pengguna! Sama halnya seperti yang dilakukan Express di dunia JavaScript.
 
 ## ⚠️ Limitasi
 
-* Karena penggunaan Fiber yang tidak aman, perpustakaan mungkin tidak selalu kompatibel dengan versi Go terbaru. Fiber 2.40.0 telah diuji dengan Go versi 1.16 hingga 1.19.
+* Karena penggunaan Fiber yang tidak aman, perpustakaan mungkin tidak selalu kompatibel dengan versi Go terbaru. Fiber 2.40.0 telah diuji dengan Go versi 1.17 hingga 1.20.
 * Fiber tidak kompatibel dengan antarmuka net/http. Ini berarti kamu tidak akan dapat menggunakan proyek seperti gqlgen, go-swagger, atau lainnya yang merupakan bagian dari ekosistem net/http.
 
 ## 👀 Contoh
@@ -437,7 +437,7 @@ func main() {
 
 ### JSON Response
 
-📖 [JSON](https://docs.gofiber.io/ctx#json)
+📖 [JSON](https://docs.gofiber.io/api/ctx#json)
 
 ```go
 type User struct {
@@ -521,7 +521,7 @@ func main() {
     c.Context().SetBodyStreamWriter(fasthttp.StreamWriter(func(w *bufio.Writer) {
       fmt.Println("WRITER")
       var i int
-      
+
       for {
         i++
         msg := fmt.Sprintf("%d - the time is %v", i, time.Now())

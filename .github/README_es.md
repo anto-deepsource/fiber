@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gofiber.io">
-    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/fiber_v2_logo.svg">
+    <img alt="Fiber" height="125" src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/logo.svg">
   </a>
   <br>
   <!-- base64 flags are available at https://www.phoca.cz/cssflags/ -->
@@ -69,10 +69,10 @@
     <img src="https://img.shields.io/badge/%F0%9F%94%8E%20gocover-97.8%25-75C46B.svg?style=flat-square">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ASecurity">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Security?label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/security.yml?branch=master&label=%F0%9F%94%91%20gosec&style=flat-square&color=75C46B">
   </a>
   <a href="https://github.com/gofiber/fiber/actions?query=workflow%3ATest">
-    <img src="https://img.shields.io/github/workflow/status/gofiber/fiber/Test?label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
+    <img src="https://img.shields.io/github/actions/workflow/status/gofiber/fiber/test.yml?branch=master&label=%F0%9F%A7%AA%20tests&style=flat-square&color=75C46B">
   </a>
     <a href="https://docs.gofiber.io">
     <img src="https://img.shields.io/badge/%F0%9F%92%A1%20fiber-docs-00ACD7.svg?style=flat-square">
@@ -108,13 +108,13 @@ func main() {
 Estas pruebas son realizadas por [TechEmpower](https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=plaintext) y [Go Web](https://github.com/smallnest/go-web-framework-benchmark). Si desea ver todos los resultados, visite nuestra [Wiki](https://docs.gofiber.io/extra/benchmarks).
 
 <p float="left" align="middle">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark-pipeline.png" width="49%">
-  <img src="https://raw.githubusercontent.com/gofiber/docs/master/.gitbook/assets/benchmark_alloc.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark-pipeline.png" width="49%">
+  <img src="https://raw.githubusercontent.com/gofiber/docs/master/static/img/benchmark_alloc.png" width="49%">
 </p>
 
 ## ⚙️ Instalación
 
-Asegúrese de tener instalado Go ([descargar](https://go.dev/dl/)). Versión `1.16` o superior.
+Asegúrese de tener instalado Go ([descargar](https://go.dev/dl/)). Versión `1.17` o superior.
 
 Arranque su proyecto creando una nueva carpeta y ejecutando `go mod init github.com/your/repo` ([mas información](https://go.dev/blog/using-go-modules)) dentro del mismo directorio. Después instale Fiber mediante el comando [`go get`](https://pkg.go.dev/cmd/go/#hdr-Add_dependencies_to_current_module_and_install_them):
 
@@ -124,7 +124,7 @@ go get -u github.com/gofiber/fiber/v2
 
 ## 🎯 Características
 
--   [Enrutamiento](https://docs.gofiber.io/routing) robusto
+-   [Enrutamiento](https://docs.gofiber.io/guide/routing) robusto
 -   Servir [archivos estáticos](https://docs.gofiber.io/api/app#static)
 -   [Rendimiento](https://docs.gofiber.io/extra/benchmarks) extremo
 -   [Bajo](https://docs.gofiber.io/extra/benchmarks) uso de [memoria](https://docs.gofiber.io/extra/benchmarks)
@@ -145,7 +145,7 @@ Los nuevos gophers que hacen el cambio de [Node.js](https://nodejs.org/en/about/
 Fiber está **inspirado** en Expressjs, el framework web más popular en Internet. Combinamos la **facilidad** de Express y **el rendimiento bruto** de Go. Si alguna vez ha implementado una aplicación web en Node.js ( _utilizando Express.js o similar_ ), muchos métodos y principios le parecerán **muy comunes** .
 
 ## ⚠️ Limitantes
-* Debido a que Fiber utiliza unsafe, la biblioteca no siempre será compatible con la última versión de Go. Fiber 2.40.0 ha sido probado con las versiones de Go 1.16 a 1.19.
+* Debido a que Fiber utiliza unsafe, la biblioteca no siempre será compatible con la última versión de Go. Fiber 2.40.0 ha sido probado con las versiones de Go 1.17 a 1.20.
 * Fiber no es compatible con interfaces net/http. Esto significa que no lo podrá usar en proyectos como qglgen, go-swagger, u otros que son parte del ecosistema net/http.
 
 ## 👀 Ejemplos
@@ -434,7 +434,7 @@ func main() {
 
 ### Respuesta JSON
 
-📖 [JSON](https://docs.gofiber.io/ctx#json)
+📖 [JSON](https://docs.gofiber.io/api/ctx#json)
 
 ```go
 type User struct {
@@ -518,7 +518,7 @@ func main() {
     c.Context().SetBodyStreamWriter(fasthttp.StreamWriter(func(w *bufio.Writer) {
       fmt.Println("WRITER")
       var i int
-      
+
       for {
         i++
         msg := fmt.Sprintf("%d - the time is %v", i, time.Now())
