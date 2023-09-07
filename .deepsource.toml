@@ -11,4 +11,4 @@ enabled = true
 
   [analyzers.meta]
   import_root = "github.com/akshit-deepsource/fiber"
-  cyclomatic_complexity_threshold = "critical"
+  cyclomatic_complexity_threshold = "low"
